@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Book — via.digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --roxo-principal: #5B2DA8;
+    --roxo-profundo: #2A0F4F;
+    --grad-start: #6A35C9;
+    --grad-end: #A855F7;
+    --fundo-base: #FAF9FB;
+    --fundo-alt: #F1EEF6;
+    --branco: #FFFFFF;
+    --texto-escuro: #1D0B3F;
+    --texto-suave: #6F6280;
+    --borda: #E3DFF0;
+    --divisor: #ECE8F5;
+    --pink: #D9468F;
+    --escuro: #1A0B2E;
+    --escuro-grad: #2A0F4F;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--fundo-base);
+    color: var(--texto-escuro);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,249,251,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--divisor);
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--roxo-profundo);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo span { color: var(--pink); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto-suave);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--roxo-principal); }
+
+  /* SECTIONS */
+  section {
+    padding: 96px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  section + section {
+    border-top: 1px solid var(--divisor);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    max-width: 100%;
+    background: linear-gradient(135deg, var(--escuro) 0%, var(--roxo-profundo) 50%, #3D1A7A 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-shape {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%);
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+  }
+
+  .hero-bg-shape2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(217,70,143,0.12) 0%, transparent 70%);
+    bottom: -100px;
+    left: 10%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 48px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--pink);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+  }
+
+  .hero-title-dot {
+    background: linear-gradient(135deg, var(--pink), var(--grad-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    margin-top: 32px;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .hero-tagline {
+    margin-top: 56px;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: -0.3px;
+  }
+
+  .hero-tagline .dot { color: var(--pink); }
+
+  .hero-meta {
+    margin-top: 72px;
+    display: flex;
+    gap: 48px;
+  }
+
+  .hero-meta-item {
+    border-left: 2px solid var(--pink);
+    padding-left: 16px;
+  }
+
+  .hero-meta-item .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+
+  .hero-meta-item .value {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* SECTION HEADERS */
+  .section-index {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 800;
+    color: var(--roxo-profundo);
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 48px;
+  }
+
+  .section-title .light { color: var(--texto-suave); font-weight: 300; }
+
+  /* BRAND NAME RULES */
+  .rule-card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 24px;
+  }
+
+  .rule-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    margin-bottom: 24px;
+  }
+
+  .name-display {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .name-pill {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+  }
+
+  .name-pill.digital { background: var(--fundo-alt); color: var(--roxo-profundo); }
+  .name-pill.brand { background: var(--fundo-alt); color: var(--roxo-profundo); }
+  .name-pill.flow { background: var(--fundo-alt); color: var(--roxo-profundo); }
+  .name-pill.inst { background: var(--roxo-profundo); color: #fff; letter-spacing: 2px; font-size: 18px; }
+
+  .name-pill.wrong {
+    background: #FEF0F0;
+    color: #CC2929;
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  .divider-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+    margin: 0 8px;
+  }
+
+  /* PALETTE */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .color-swatch {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+  }
+
+  .swatch-color {
+    height: 100px;
+  }
+
+  .swatch-info {
+    padding: 14px 16px;
+    background: var(--branco);
+  }
+
+  .swatch-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    margin-bottom: 2px;
+  }
+
+  .swatch-hex {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--texto-suave);
+    font-family: 'Courier New', monospace;
+  }
+
+  .swatch-use {
+    font-size: 11px;
+    color: var(--texto-suave);
+    margin-top: 4px;
+  }
+
+  .palette-rule {
+    background: linear-gradient(135deg, var(--roxo-profundo), #3D1A7A);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .palette-bars {
+    display: flex;
+    gap: 4px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 200px;
+  }
+
+  .bar-70 { flex: 7; background: var(--fundo-base); }
+  .bar-20 { flex: 2; background: var(--roxo-principal); }
+  .bar-10 { flex: 1; background: var(--pink); }
+
+  .palette-rule-text h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .palette-rule-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+
+  /* TYPOGRAPHY */
+  .type-showcase {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 56px;
+    margin-bottom: 24px;
+  }
+
+  .type-weight-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--divisor);
+  }
+
+  .type-row:last-child { border-bottom: none; }
+
+  .type-meta {
+    width: 180px;
+    flex-shrink: 0;
+  }
+
+  .type-meta .weight-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+  }
+
+  .type-meta .size-label {
+    font-size: 11px;
+    color: var(--texto-suave);
+    margin-top: 2px;
+  }
+
+  .type-sample { flex: 1; color: var(--texto-escuro); }
+
+  /* LOGO */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .logo-card {
+    border-radius: 16px;
+    padding: 40px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--borda);
+  }
+
+  .logo-card.light { background: var(--branco); }
+  .logo-card.dark { background: var(--escuro); border-color: rgba(255,255,255,0.08); }
+  .logo-card.purple { background: var(--roxo-principal); border-color: rgba(255,255,255,0.1); }
+
+  .logo-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+  }
+
+  .logo-card.dark .logo-label,
+  .logo-card.purple .logo-label { color: rgba(255,255,255,0.5); }
+
+  .logo-text-demo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  /* GRADIENT display */
+  .grad-box {
+    height: 80px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+    margin-bottom: 8px;
+  }
+
+  /* ARQUETIPO */
+  .archetype-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .archetype-card {
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid var(--borda);
+  }
+
+  .archetype-card.primary {
+    background: linear-gradient(135deg, var(--roxo-profundo), #3D1A7A);
+    border-color: transparent;
+    grid-column: span 2;
+  }
+
+  .archetype-card.secondary {
+    background: var(--branco);
+  }
+
+  .archetype-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .tag-primary { background: rgba(217,70,143,0.2); color: var(--pink); }
+  .tag-secondary { background: var(--fundo-alt); color: var(--roxo-principal); }
+
+  .archetype-card h3 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  .archetype-card.primary h3 { color: #fff; }
+  .archetype-card.secondary h3 { color: var(--roxo-profundo); }
+
+  .archetype-card p { font-size: 15px; line-height: 1.7; }
+  .archetype-card.primary p { color: rgba(255,255,255,0.7); }
+  .archetype-card.secondary p { color: var(--texto-suave); }
+
+  /* VALUES */
+  .values-strip {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .value-item {
+    flex: 1;
+    padding: 32px 24px;
+    text-align: center;
+    border-right: 1px solid var(--borda);
+    background: var(--branco);
+    transition: background 0.2s;
+  }
+
+  .value-item:last-child { border-right: none; }
+
+  .value-item:hover { background: var(--fundo-alt); }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--fundo-alt);
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .value-icon svg { width: 18px; height: 18px; }
+
+  .value-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--roxo-profundo);
+    letter-spacing: -0.3px;
+  }
+
+  /* TOM DE VOZ */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .voice-card {
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--borda);
+  }
+
+  .voice-card.do { background: #F0FBF6; border-color: #C3E8D4; }
+  .voice-card.dont { background: #FEF5F5; border-color: #F5C3C3; }
+
+  .voice-card h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .voice-card.do h4 { color: #1A7A48; }
+  .voice-card.dont h4 { color: #CC2929; }
+
+  .voice-item {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .voice-item::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+  }
+
+  .voice-card.do .voice-item { color: #1D4A2E; }
+  .voice-card.do .voice-item::before { content: '✓'; color: #1A7A48; }
+
+  .voice-card.dont .voice-item { color: #5C1C1C; }
+  .voice-card.dont .voice-item::before { content: '✗'; color: #CC2929; }
+
+  /* COMPARATIVO */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+  }
+
+  .compare-table th {
+    padding: 16px 24px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--fundo-alt);
+    color: var(--texto-suave);
+    text-align: left;
+  }
+
+  .compare-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    border-top: 1px solid var(--divisor);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .compare-table tr:hover td { background: var(--fundo-alt); }
+
+  .td-dont { color: #CC2929; }
+  .td-do { color: var(--roxo-principal); font-weight: 600; }
+
+  /* SETA */
+  .seta-showcase {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .seta-demo {
+    text-align: center;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--borda);
+    background: var(--branco);
+  }
+
+  .seta-demo .label { font-size: 11px; color: var(--texto-suave); margin-top: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
+
+  /* VOCABULARY */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .vocab-list {
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .vocab-list.uses { background: var(--fundo-alt); }
+  .vocab-list.avoids { background: #FEF5F5; border: 1px solid #F5C3C3; }
+
+  .vocab-list h3 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .vocab-list.uses h3 { color: var(--roxo-principal); }
+  .vocab-list.avoids h3 { color: #CC2929; }
+
+  .vocab-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .vocab-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .vocab-list.uses .vocab-tag {
+    background: rgba(91,45,168,0.1);
+    color: var(--roxo-principal);
+  }
+
+  .vocab-list.avoids .vocab-tag {
+    background: rgba(204,41,41,0.08);
+    color: #CC2929;
+  }
+
+  /* TAGLINES */
+  .tagline-main {
+    background: linear-gradient(135deg, var(--roxo-profundo), #3D1A7A);
+    border-radius: 20px;
+    padding: 56px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .tagline-main p {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1.3;
+  }
+
+  .tagline-main p .period { color: var(--pink); }
+
+  .tagline-support-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .tagline-support-item {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 28px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--roxo-profundo);
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+  }
+
+  /* MISSION POSIT */
+  .positioning-block {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 48px;
+    margin-bottom: 24px;
+  }
+
+  .positioning-block h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 16px;
+  }
+
+  .positioning-block p {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--texto-escuro);
+    line-height: 1.7;
+  }
+
+  /* FRENTES */
+  .frentes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .frente-card {
+    border-radius: 20px;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .frente-card.brand-card {
+    background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  }
+
+  .frente-card.flow-card {
+    background: linear-gradient(135deg, var(--escuro), var(--escuro-grad));
+  }
+
+  .frente-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+  }
+
+  .frente-card h3 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  .frente-card p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .frente-keyword {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.3px;
+  }
+
+  /* DO / DONT LOGO */
+  .logo-rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .logo-rule-item {
+    border-radius: 12px;
+    padding: 20px 24px;
+    border: 1px solid var(--borda);
+    background: var(--branco);
+  }
+
+  .logo-rule-item.rule-bad {
+    background: #FEF5F5;
+    border-color: #F5C3C3;
+  }
+
+  .rule-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .rule-ok .rule-tag { color: #1A7A48; }
+  .rule-bad .rule-tag { color: #CC2929; }
+
+  .rule-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .rule-ok .rule-text { color: var(--texto-escuro); }
+  .rule-bad .rule-text { color: #7A2020; }
+
+  /* FOOTER */
+  footer {
+    background: var(--escuro);
+    padding: 80px 48px;
+    text-align: center;
+  }
+
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+  .footer-brand {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .footer-brand span { color: var(--pink); }
+
+  .footer-tagline {
+    font-size: 16px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 48px;
+  }
+
+  .footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 48px 0 32px;
+  }
+
+  .footer-meta {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    nav .nav-links { display: none; }
+    section { padding: 64px 24px; }
+    .hero-inner { padding: 100px 24px; }
+    .hero-meta { flex-direction: column; gap: 24px; }
+    .logo-grid { grid-template-columns: 1fr; }
+    .archetype-grid { grid-template-columns: 1fr; }
+    .archetype-card.primary { grid-column: span 1; }
+    .frentes-grid { grid-template-columns: 1fr; }
+    .voice-grid { grid-template-columns: 1fr; }
+    .vocab-grid { grid-template-columns: 1fr; }
+    .tagline-support-grid { grid-template-columns: 1fr; }
+    .logo-rules-grid { grid-template-columns: 1fr; }
+    .type-row { flex-direction: column; gap: 8px; }
+    .type-meta { width: auto; }
+    .values-strip { flex-direction: column; }
+    .value-item { border-right: none; border-bottom: 1px solid var(--borda); }
+    .value-item:last-child { border-bottom: none; }
+  }
+
+  /* SCROLL ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">via<span>.</span>digital</div>
+  <ul class="nav-links">
+    <li><a href="#identidade">Identidade</a></li>
+    <li><a href="#paleta">Paleta</a></li>
+    <li><a href="#tipografia">Tipografia</a></li>
+    <li><a href="#logotipo">Logotipo</a></li>
+    <li><a href="#voz">Tom de Voz</a></li>
+    <li><a href="#posicionamento">Posicionamento</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-shape2"></div>
+  <div class="hero-inner">
+    <p class="hero-label">Brand Book — Abril 2026</p>
+    <h1 class="hero-title">
+      via<span class="hero-title-dot">.</span>digital
+    </h1>
+    <p class="hero-subtitle">Guia completo de identidade de marca — da paleta e tipografia ao tom de voz e posicionamento estratégico.</p>
+    <p class="hero-tagline">Posicionamento para crescer<span class="dot">.</span> Estrutura para sustentar<span class="dot">.</span></p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <p class="label">Fundação</p>
+        <p class="value">2024</p>
+      </div>
+      <div class="hero-meta-item">
+        <p class="label">Segmento</p>
+        <p class="value">Estruturação estratégica</p>
+      </div>
+      <div class="hero-meta-item">
+        <p class="label">Fundadora</p>
+        <p class="value">Viviana Del Bianco</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIDADE -->
+<section id="identidade" class="fade-in">
+  <p class="section-index">01 — Identidade</p>
+  <h2 class="section-title">Quem é a <span class="light">via.digital</span></h2>
+
+  <div class="positioning-block">
+    <h3>Missão</h3>
+    <p>Apoiar empresas que já provaram seu negócio a crescer com posicionamento claro e processos que sustentam — conectando o que a empresa é ao que ela comunica e ao que consegue entregar.</p>
+  </div>
+
+  <div class="frentes-grid">
+    <div class="frente-card brand-card">
+      <span class="frente-badge">Frente 01</span>
+      <h3>via.brand</h3>
+      <p>Posicionamento estratégico de marca para que sua empresa seja percebida exatamente como ela entrega hoje. Narrativa, mensagem e comunicação integradas.</p>
+      <p class="frente-keyword">posicionamento · narrativa · comunicação</p>
+    </div>
+    <div class="frente-card flow-card">
+      <span class="frente-badge">Frente 02</span>
+      <h3>via.flow</h3>
+      <p>Estrutura operacional e fluxos que permitem crescer sem depender do dono em cada detalhe. Processos que o crescimento sustenta.</p>
+      <p class="frente-keyword">processos · fluxos · operação · escala</p>
+    </div>
+  </div>
+
+  <div class="rule-card">
+    <h3>Escrita do Nome da Marca</h3>
+    <p style="font-size:14px; color:var(--texto-suave); margin-bottom:24px;">O nome da marca tem regras precisas de escrita. Nunca usar "Via" isolado, sem sufixo.</p>
+
+    <div style="margin-bottom:24px;">
+      <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:12px;">Visual / Digital — sempre minúsculo</p>
+      <div class="name-display">
+        <span class="name-pill digital">via.digital</span>
+        <span class="name-pill brand">via.brand</span>
+        <span class="name-pill flow">via.flow</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:24px;">
+      <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:12px;">Institucional — sempre maiúsculo</p>
+      <div class="name-display">
+        <span class="name-pill inst">VIA.DIGITAL</span>
+        <span class="name-pill inst">VIA.BRAND</span>
+        <span class="name-pill inst">VIA.FLOW</span>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#CC2929; margin-bottom:12px;">Nunca usar desta forma</p>
+      <div class="name-display">
+        <span class="name-pill wrong">Via</span>
+        <span class="name-pill wrong">Via Digital</span>
+        <span class="name-pill wrong">ViaDigital</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARQUÉTIPO -->
+<section id="arquetipo" class="fade-in">
+  <p class="section-index">02 — Arquétipo & Valores</p>
+  <h2 class="section-title">O <span class="light">caráter</span> da marca</h2>
+
+  <div class="archetype-grid" style="margin-bottom:32px;">
+    <div class="archetype-card primary">
+      <span class="archetype-tag tag-primary">Arquétipo Central</span>
+      <h3>Governante</h3>
+      <p>A via.digital traz clareza, estrutura e direção para o próximo nível do negócio. Não promete transformação — entrega o próximo passo com consistência. Comunica autoridade sem arrogância, e respeito pelo que já foi construído.</p>
+    </div>
+    <div class="archetype-card secondary">
+      <span class="archetype-tag tag-secondary">Secundário</span>
+      <h3>Sábio</h3>
+      <p>Diagnóstico preciso, inteligência estratégica aplicada. A marca fala como quem conhece o terreno antes do cliente terminar de descrever o cenário.</p>
+    </div>
+    <div class="archetype-card secondary">
+      <span class="archetype-tag tag-secondary">Secundário</span>
+      <h3>Criador</h3>
+      <p>Constrói narrativas e sistemas que sustentam o crescimento de forma original. Não replica metodologias genéricas — constrói o caminho certo para aquele negócio específico.</p>
+    </div>
+  </div>
+
+  <div class="values-strip">
+    <div class="value-item">
+      <div class="value-icon">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 2L11 7H16L12 10.5L13.5 16L9 13L4.5 16L6 10.5L2 7H7L9 2Z" stroke="#5B2DA8" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="value-name">Clareza</p>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="6" height="6" rx="1.5" stroke="#5B2DA8" stroke-width="1.5"/>
+          <rect x="10" y="2" width="6" height="6" rx="1.5" stroke="#5B2DA8" stroke-width="1.5"/>
+          <rect x="2" y="10" width="6" height="6" rx="1.5" stroke="#5B2DA8" stroke-width="1.5"/>
+          <rect x="10" y="10" width="6" height="6" rx="1.5" stroke="#5B2DA8" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <p class="value-name">Estrutura</p>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="9" cy="9" r="7" stroke="#5B2DA8" stroke-width="1.5"/>
+          <path d="M6 9L8 11L12 7" stroke="#5B2DA8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="value-name">Precisão</p>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 9C2 9 4 5 9 5C14 5 16 9 16 9C16 9 14 13 9 13C4 13 2 9 2 9Z" stroke="#5B2DA8" stroke-width="1.5"/>
+          <circle cx="9" cy="9" r="2" stroke="#5B2DA8" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <p class="value-name">Consistência</p>
+    </div>
+    <div class="value-item">
+      <div class="value-icon">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 14L7 8L10 11L13 6L16 10" stroke="#5B2DA8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="value-name">Resultado Real</p>
+    </div>
+  </div>
+</section>
+
+<!-- PALETA -->
+<section id="paleta" class="fade-in">
+  <p class="section-index">03 — Paleta de Cores</p>
+  <h2 class="section-title">Cores da <span class="light">identidade</span></h2>
+
+  <div class="palette-rule">
+    <div class="palette-bars">
+      <div class="bar-70"></div>
+      <div class="bar-20"></div>
+      <div class="bar-10"></div>
+    </div>
+    <div class="palette-rule-text">
+      <h3>Regra de Ouro: 70 · 20 · 10</h3>
+      <p>70% claro (fundo e superfícies) · 20% roxo (identidade principal) · 10% pink (acento estratégico). Nunca inverter essa proporção.</p>
+    </div>
+  </div>
+
+  <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:16px;">Cores de Identidade — Roxo (20%)</p>
+  <div class="palette-grid" style="margin-bottom:32px;">
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#5B2DA8;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Roxo Principal</p>
+        <p class="swatch-hex">#5B2DA8</p>
+        <p class="swatch-use">Identidade, CTAs, destaques</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#2A0F4F;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Roxo Profundo</p>
+        <p class="swatch-hex">#2A0F4F</p>
+        <p class="swatch-use">Ênfase máxima, hover</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:linear-gradient(135deg,#6A35C9,#A855F7);"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Gradiente Principal</p>
+        <p class="swatch-hex">#6A35C9 → #A855F7</p>
+        <p class="swatch-use">via.brand, elementos hero</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:16px;">Fundos & Superfícies — Claro (70%)</p>
+  <div class="palette-grid" style="margin-bottom:32px;">
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#FAF9FB; border-bottom:1px solid #E3DFF0;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Fundo Principal</p>
+        <p class="swatch-hex">#FAF9FB</p>
+        <p class="swatch-use">Background base do site</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#F1EEF6; border-bottom:1px solid #E3DFF0;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Fundo Secundário</p>
+        <p class="swatch-hex">#F1EEF6</p>
+        <p class="swatch-use">Seções alternadas</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#FFFFFF; border-bottom:1px solid #E3DFF0;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Cards</p>
+        <p class="swatch-hex">#FFFFFF</p>
+        <p class="swatch-use">Superfícies de cards</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#1D0B3F;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Texto Principal</p>
+        <p class="swatch-hex">#1D0B3F</p>
+        <p class="swatch-use">Corpo e títulos</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#6F6280;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Texto Secundário</p>
+        <p class="swatch-hex">#6F6280</p>
+        <p class="swatch-use">Labels, suporte</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#E3DFF0;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Bordas</p>
+        <p class="swatch-hex">#E3DFF0</p>
+        <p class="swatch-use">Divisores, bordas</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:16px;">Acento & Uso Estratégico (10%)</p>
+  <div class="palette-grid">
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#D9468F;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Pink Acento</p>
+        <p class="swatch-hex">#D9468F</p>
+        <p class="swatch-use">CTAs, seta, destaques pontuais — máx. 10%</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:#1A0B2E;"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Fundo Escuro</p>
+        <p class="swatch-hex">#1A0B2E</p>
+        <p class="swatch-use">via.flow, seções de impacto</p>
+      </div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-color" style="background:linear-gradient(135deg,#1A0B2E,#2A0F4F);"></div>
+      <div class="swatch-info">
+        <p class="swatch-name">Gradiente Escuro</p>
+        <p class="swatch-hex">#1A0B2E → #2A0F4F</p>
+        <p class="swatch-use">via.flow, hero escuro</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section id="tipografia" class="fade-in">
+  <p class="section-index">04 — Tipografia</p>
+  <h2 class="section-title">Nunito · <span class="light">a única fonte</span></h2>
+
+  <div class="rule-card" style="margin-bottom:24px;">
+    <h3>Regra Absoluta</h3>
+    <p style="font-size:15px; color:var(--texto-suave); line-height:1.7;">Nunito é a única família tipográfica da via.digital. A hierarquia é criada exclusivamente por peso e tamanho — nunca misturar com outra família. Body: line-height 1.6–1.8. Letter-spacing apenas em labels em caixa alta. Alinhamento preferencial: esquerda. Centro apenas em headlines curtas de hero.</p>
+  </div>
+
+  <div class="type-showcase">
+    <div class="type-weight-grid">
+      <div class="type-row">
+        <div class="type-meta">
+          <p class="weight-label">ExtraBold 800</p>
+          <p class="size-label">48–72px · Hero / Headline</p>
+        </div>
+        <p class="type-sample" style="font-size:52px; font-weight:800; letter-spacing:-2px; line-height:1.0;">via.digital</p>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <p class="weight-label">Bold 700</p>
+          <p class="size-label">32–40px · Título de Seção</p>
+        </div>
+        <p class="type-sample" style="font-size:36px; font-weight:700; letter-spacing:-1px;">Posicionamento para crescer.</p>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <p class="weight-label">SemiBold 600</p>
+          <p class="size-label">20–24px · Subtítulo / CTA</p>
+        </div>
+        <p class="type-sample" style="font-size:22px; font-weight:600;">Estrutura para sustentar.</p>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <p class="weight-label">Regular 400</p>
+          <p class="size-label">15–17px · Corpo</p>
+        </div>
+        <p class="type-sample" style="font-size:16px; font-weight:400; color:var(--texto-suave);">A via.digital apoia PMEs que já se provaram no mercado a crescer com posicionamento e processos integrados. Diagnóstico preciso antes de qualquer proposta.</p>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <p class="weight-label">Light 300</p>
+          <p class="size-label">12–13px · Labels / Captions</p>
+        </div>
+        <p class="type-sample" style="font-size:13px; font-weight:300; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave);">Brand Book · Abril 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOTIPO -->
+<section id="logotipo" class="fade-in">
+  <p class="section-index">05 — Logotipo</p>
+  <h2 class="section-title">Aplicações do <span class="light">logo</span></h2>
+
+  <div class="logo-grid" style="margin-bottom:32px;">
+    <div class="logo-card light">
+      <div style="font-size:32px; font-weight:800; color:var(--roxo-profundo); letter-spacing:-1px;">via.digital</div>
+      <p class="logo-label">Horizontal · Fundo Claro</p>
+      <p style="font-size:12px; color:var(--texto-suave); text-align:center;">Uso primário em todas as peças com fundo claro. Versão padrão.</p>
+    </div>
+    <div class="logo-card dark">
+      <div style="font-size:32px; font-weight:800; color:#ffffff; letter-spacing:-1px;">via.digital</div>
+      <p class="logo-label">Horizontal · Fundo Escuro</p>
+      <p style="font-size:12px; color:rgba(255,255,255,0.5); text-align:center;">Quando o fundo for roxo escuro ou preto.</p>
+    </div>
+    <div class="logo-card purple">
+      <div style="font-size:32px; font-weight:800; color:#ffffff; letter-spacing:-1px;">via.digital</div>
+      <p class="logo-label">Horizontal · Fundo Roxo</p>
+      <p style="font-size:12px; color:rgba(255,255,255,0.5); text-align:center;">Peças com fundo em gradiente roxo.</p>
+    </div>
+  </div>
+
+  <div class="rule-card" style="margin-bottom:24px;">
+    <h3>Elemento Seta (seta.png)</h3>
+    <p style="font-size:14px; color:var(--texto-suave); margin-bottom:24px;">A seta é um elemento de identidade. Segue regras absolutas de uso.</p>
+    <div class="seta-showcase">
+      <div class="seta-demo">
+        <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="setaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#D9468F"/>
+              <stop offset="100%" style="stop-color:#A855F7"/>
+            </linearGradient>
+          </defs>
+          <polygon points="10,10 50,30 10,50 20,30" fill="url(#setaGrad)" rx="4"/>
+        </svg>
+        <p class="label">Gradiente pink→roxo</p>
+      </div>
+      <div style="flex:1;">
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:12px; background:var(--fundo-alt); padding:12px 16px; border-radius:8px;">
+            <span style="color:#1A7A48; font-weight:700; font-size:13px;">✓</span>
+            <span style="font-size:13px; color:var(--texto-escuro);">Sempre apontando para a direita</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; background:var(--fundo-alt); padding:12px 16px; border-radius:8px;">
+            <span style="color:#1A7A48; font-weight:700; font-size:13px;">✓</span>
+            <span style="font-size:13px; color:var(--texto-escuro);">Gradiente pink→roxo — nunca recolorir</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; background:var(--fundo-alt); padding:12px 16px; border-radius:8px;">
+            <span style="color:#1A7A48; font-weight:700; font-size:13px;">✓</span>
+            <span style="font-size:13px; color:var(--texto-escuro);">Como CTA marker e bullet point</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; background:#FEF5F5; padding:12px 16px; border-radius:8px; border:1px solid #F5C3C3;">
+            <span style="color:#CC2929; font-weight:700; font-size:13px;">✗</span>
+            <span style="font-size:13px; color:#7A2020;">Nunca em qualquer outra direção</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; background:#FEF5F5; padding:12px 16px; border-radius:8px; border:1px solid #F5C3C3;">
+            <span style="color:#CC2929; font-weight:700; font-size:13px;">✗</span>
+            <span style="font-size:13px; color:#7A2020;">Nunca como substituta do logo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo-rules-grid">
+    <div class="logo-rule-item rule-ok">
+      <p class="rule-tag" style="color:#1A7A48;">✓ Correto</p>
+      <p class="rule-text">Logo sempre em minúsculo no visual: <strong>via.digital</strong></p>
+    </div>
+    <div class="logo-rule-item rule-bad">
+      <p class="rule-tag">✗ Proibido</p>
+      <p class="rule-text" style="color:#7A2020;">Nome em caixa alta no visual: VIA.DIGITAL</p>
+    </div>
+    <div class="logo-rule-item rule-ok">
+      <p class="rule-tag" style="color:#1A7A48;">✓ Correto</p>
+      <p class="rule-text">Fundo claro dominante — comunica estrutura, não tech</p>
+    </div>
+    <div class="logo-rule-item rule-bad">
+      <p class="rule-tag">✗ Proibido</p>
+      <p class="rule-text" style="color:#7A2020;">Fundo escuro dominante no site — comunica empresa de TI</p>
+    </div>
+    <div class="logo-rule-item rule-ok">
+      <p class="rule-tag" style="color:#1A7A48;">✓ Correto</p>
+      <p class="rule-text">Fotografias de pessoas reais em contexto de trabalho</p>
+    </div>
+    <div class="logo-rule-item rule-bad">
+      <p class="rule-tag">✗ Proibido</p>
+      <p class="rule-text" style="color:#7A2020;">Ilustrações de robôs, engrenagens, cérebros ou ícones de IA</p>
+    </div>
+    <div class="logo-rule-item rule-ok">
+      <p class="rule-tag" style="color:#1A7A48;">✓ Correto</p>
+      <p class="rule-text">Pink como acento controlado — máximo 10% da composição</p>
+    </div>
+    <div class="logo-rule-item rule-bad">
+      <p class="rule-tag">✗ Proibido</p>
+      <p class="rule-text" style="color:#7A2020;">Pink como cor dominante — perde o efeito de acento</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOM DE VOZ -->
+<section id="voz" class="fade-in">
+  <p class="section-index">06 — Tom de Voz</p>
+  <h2 class="section-title">Como a marca <span class="light">fala</span></h2>
+
+  <div class="positioning-block" style="margin-bottom:24px;">
+    <h3>Princípio Inviolável</h3>
+    <p>O cliente construiu algo que funciona. <strong>Nunca</strong> insinuar desorganização, fraqueza ou erro. A via.digital ajuda empresas que cresceram a crescer ainda mais. O dono é o protagonista — a via.digital é a parceira do próximo passo.</p>
+  </div>
+
+  <div class="voice-grid" style="margin-bottom:32px;">
+    <div class="voice-card do">
+      <h4>✓ A marca fala assim</h4>
+      <p class="voice-item">Direta e precisa — diz o que precisa ser dito, sem rodeios</p>
+      <p class="voice-item">Sofisticada sem ser distante — autoridade com humanidade</p>
+      <p class="voice-item">Provocadora sem ser agressiva — convida à reflexão</p>
+      <p class="voice-item">Concreta — usa exemplos reais, evita abstração</p>
+      <p class="voice-item">Parte do crescimento, não do problema</p>
+    </div>
+    <div class="voice-card dont">
+      <h4>✗ A marca nunca usa</h4>
+      <p class="voice-item">Hype, superlativos vazios, emoção performática</p>
+      <p class="voice-item">Jargão de startup, "disruptivo", "inovador"</p>
+      <p class="voice-item">Tom de coach motivacional</p>
+      <p class="voice-item">Palavras: bagunçado, desestruturado, transformar</p>
+      <p class="voice-item">IA como argumento de venda</p>
+    </div>
+  </div>
+
+  <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:16px;">Comparativo de Linguagem</p>
+  <table class="compare-table" style="margin-bottom:32px;">
+    <thead>
+      <tr>
+        <th style="width:40%;">✗ Evitar</th>
+        <th style="width:40%;">✓ via.digital</th>
+        <th style="width:20%;">Por quê</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-dont">"Vamos transformar seu negócio!"</td>
+        <td class="td-do">"Vamos estruturar o próximo passo da sua empresa."</td>
+        <td style="font-size:12px; color:var(--texto-suave);">Não conserta — acompanha quem já construiu algo sólido</td>
+      </tr>
+      <tr>
+        <td class="td-dont">"Sua empresa está bagunçada?"</td>
+        <td class="td-do">"Seu negócio cresceu. Os processos acompanharam?"</td>
+        <td style="font-size:12px; color:var(--texto-suave);">Parte do crescimento, não do problema</td>
+      </tr>
+      <tr>
+        <td class="td-dont">"Nossa equipe apaixonada vai te ajudar"</td>
+        <td class="td-do">"Diagnóstico direto. Sem relatório de gaveta."</td>
+        <td style="font-size:12px; color:var(--texto-suave);">Paixão é commodity. Precisão é diferencial</td>
+      </tr>
+      <tr>
+        <td class="td-dont">"Resultados extraordinários para sua marca"</td>
+        <td class="td-do">"Crescimento com consistência."</td>
+        <td style="font-size:12px; color:var(--texto-suave);">Hipérbole enfraquece credibilidade</td>
+      </tr>
+      <tr>
+        <td class="td-dont">"Somos especialistas em marketing digital"</td>
+        <td class="td-do">"Parceira estratégica de posicionamento e operação."</td>
+        <td style="font-size:12px; color:var(--texto-suave);">Define o que é, não o que não é</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:16px;">Vocabulário da Marca</p>
+  <div class="vocab-grid">
+    <div class="vocab-list uses">
+      <h3>Palavras que a marca usa</h3>
+      <div class="vocab-tags">
+        <span class="vocab-tag">estrutura</span>
+        <span class="vocab-tag">processos</span>
+        <span class="vocab-tag">fluxos</span>
+        <span class="vocab-tag">crescimento</span>
+        <span class="vocab-tag">clareza</span>
+        <span class="vocab-tag">posicionamento</span>
+        <span class="vocab-tag">direção</span>
+        <span class="vocab-tag">consistência</span>
+        <span class="vocab-tag">operação</span>
+        <span class="vocab-tag">percepção</span>
+        <span class="vocab-tag">narrativa</span>
+        <span class="vocab-tag">método</span>
+        <span class="vocab-tag">diagnóstico</span>
+        <span class="vocab-tag">próximo passo</span>
+        <span class="vocab-tag">escala</span>
+        <span class="vocab-tag">resultado real</span>
+        <span class="vocab-tag">parceira estratégica</span>
+        <span class="vocab-tag">prova real</span>
+        <span class="vocab-tag">tempo recuperado</span>
+        <span class="vocab-tag">sustentável</span>
+      </div>
+    </div>
+    <div class="vocab-list avoids">
+      <h3>Palavras que a marca nunca usa</h3>
+      <div class="vocab-tags">
+        <span class="vocab-tag">bagunçado</span>
+        <span class="vocab-tag">desestruturado</span>
+        <span class="vocab-tag">transformar</span>
+        <span class="vocab-tag">revolucionar</span>
+        <span class="vocab-tag">disruptivo</span>
+        <span class="vocab-tag">inovador</span>
+        <span class="vocab-tag">apaixonado</span>
+        <span class="vocab-tag">sonho</span>
+        <span class="vocab-tag">jornada</span>
+        <span class="vocab-tag">incrível</span>
+        <span class="vocab-tag">potencial máximo</span>
+        <span class="vocab-tag">extraordinário</span>
+        <span class="vocab-tag">automação como produto</span>
+        <span class="vocab-tag">IA como diferencial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSICIONAMENTO -->
+<section id="posicionamento" class="fade-in">
+  <p class="section-index">07 — Posicionamento & Taglines</p>
+  <h2 class="section-title">A <span class="light">assinatura</span> da marca</h2>
+
+  <div class="tagline-main">
+    <p>Posicionamento para crescer<span class="period">.</span><br>Estrutura para sustentar<span class="period">.</span></p>
+  </div>
+
+  <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--texto-suave); margin-bottom:16px;">Taglines de Apoio</p>
+  <div class="tagline-support-grid" style="margin-bottom:40px;">
+    <div class="tagline-support-item">Como funciona. Como é vista.</div>
+    <div class="tagline-support-item">O negócio cresceu. Os processos acompanharam?</div>
+    <div class="tagline-support-item">seu negócio funcionando. sua marca acontecendo.</div>
+  </div>
+
+  <div class="positioning-block" style="margin-bottom:24px;">
+    <h3>Diferencial Absoluto</h3>
+    <p>A via.digital é a única parceira que trabalha posicionamento e operação de forma integrada — porque não adianta crescer sem sustentar, nem sustentar sem crescer.</p>
+  </div>
+
+  <div class="positioning-block">
+    <h3>Frase Guia</h3>
+    <p style="font-size:22px; font-weight:700; color:var(--roxo-profundo); letter-spacing:-0.5px;">"Essa empresa entende exatamente onde está o próximo passo do meu negócio."</p>
+  </div>
+</section>
+
+<!-- MÉTODO VIA -->
+<section id="metodo" class="fade-in">
+  <p class="section-index">08 — Método VIA</p>
+  <h2 class="section-title">Diagnóstico <span class="light">antes de tudo</span></h2>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px;">
+    <div style="background:var(--branco); border:1px solid var(--borda); border-radius:16px; padding:32px 24px; text-align:center;">
+      <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,var(--grad-start),var(--grad-end)); margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-size:20px; font-weight:800; color:#fff;">V</span>
+      </div>
+      <p style="font-size:18px; font-weight:800; color:var(--roxo-profundo); margin-bottom:8px;">Visão</p>
+      <p style="font-size:13px; color:var(--texto-suave); line-height:1.5;">Clareza estratégica sobre o futuro do negócio</p>
+    </div>
+    <div style="background:var(--branco); border:1px solid var(--borda); border-radius:16px; padding:32px 24px; text-align:center;">
+      <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,var(--grad-start),var(--grad-end)); margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-size:20px; font-weight:800; color:#fff;">I</span>
+      </div>
+      <p style="font-size:18px; font-weight:800; color:var(--roxo-profundo); margin-bottom:8px;">Mensagem</p>
+      <p style="font-size:13px; color:var(--texto-suave); line-height:1.5;">Como a empresa é percebida no mercado</p>
+    </div>
+    <div style="background:var(--branco); border:1px solid var(--borda); border-radius:16px; padding:32px 24px; text-align:center;">
+      <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,var(--grad-start),var(--grad-end)); margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-size:20px; font-weight:800; color:#fff;">A</span>
+      </div>
+      <p style="font-size:18px; font-weight:800; color:var(--roxo-profundo); margin-bottom:8px;">Estrutura</p>
+      <p style="font-size:13px; color:var(--texto-suave); line-height:1.5;">Como o crescimento está sendo conduzido</p>
+    </div>
+    <div style="background:var(--branco); border:1px solid var(--borda); border-radius:16px; padding:32px 24px; text-align:center;">
+      <div style="width:48px; height:48px; border-radius:12px; background:linear-gradient(135deg,var(--pink),var(--roxo-principal)); margin:0 auto 16px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-size:14px; font-weight:800; color:#fff;">→</span>
+      </div>
+      <p style="font-size:18px; font-weight:800; color:var(--roxo-profundo); margin-bottom:8px;">Conversão</p>
+      <p style="font-size:13px; color:var(--texto-suave); line-height:1.5;">Demanda se transformando em resultado real</p>
+    </div>
+  </div>
+
+  <div style="background:var(--fundo-alt); border-radius:16px; padding:40px; text-align:center;">
+    <p style="font-size:16px; font-weight:600; color:var(--roxo-profundo);">A via.digital não vende pacote pronto. Primeiro entendemos onde está o real ponto de alavancagem do seu negócio.</p>
+    <p style="font-size:14px; color:var(--texto-suave); margin-top:12px;">Resultado: clareza total sobre o que organizar primeiro. Sem relatório de gaveta.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-brand">via<span>.</span>digital</p>
+    <p class="footer-tagline">Posicionamento para crescer. Estrutura para sustentar.</p>
+    <hr class="footer-divider">
+    <p class="footer-meta">Brand Book · Versão Abril/2026 · Uso interno — via.digital</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
